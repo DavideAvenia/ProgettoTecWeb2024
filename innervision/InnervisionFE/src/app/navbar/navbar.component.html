@@ -1,0 +1,50 @@
+<nav class="navbar">
+  <div class="navbar-logo">
+    <a [routerLink]="['/']">
+      <img class="brand-logo" src="/assets/logo.png" alt="logo" aria-hidden="true">
+    </a>
+  </div>
+  <ul class="navbar-links">
+    <li><a [routerLink]="['/']">Home</a></li>
+    <li class="dropdown-container" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <a href="#">Categorie & Marchi</a>
+      <div class="dropdown-content" *ngIf="showDropdown">
+        <div>
+          <ul>
+            <h3>Categorie</h3>
+            <li *ngFor="let categorie of categorieDisponibili">
+              <a [routerLink]="['/categories', categorie.idCategoria]" href="#">{{ categorie.descCategoria }}</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <h3>Marche</h3>
+            <li *ngFor="let marche of marcheDisponibili">
+              <a [routerLink]="['/brand', marche.idMarchio]"  href="#">{{ marche.descMarchio }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li><a [routerLink]="['/services']">Servizi</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <ul class="navbar-links">
+      <li>
+        <a class="button" [routerLink]="['/showCart']">
+          Cart
+        </a>
+      </li>
+      <li *ngIf="!isLoggedIn()">
+        <a class="button" [routerLink]="['/login']">Login</a>
+      </li>
+      <li *ngIf="isLoggedIn()">
+        <a class="button" (click)="logout()">Logout</a>
+      </li>
+      <li *ngIf="!isLoggedIn()">
+        <a class="button" [routerLink]="['/register']">Registrati</a>
+      </li>
+    </ul>
+  </div>
+</nav>

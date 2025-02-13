@@ -1,0 +1,19 @@
+<article>
+  <!--<img class="listing-photo" [src]="articolo.foto"
+    alt="Exterior photo of {{articolo.nome}}"/>-->
+  <section class="listing-description">
+    <h2 class="listing-heading">{{articolo.nome}}</h2>
+  </section>
+  <section class="listing-features">
+    <h2 class="section-heading">Riguardo la montatura</h2>
+    <ul>
+      <li>Quantita disponibile: {{articolo.quantitaDisponibile}}</li>
+      <li>Descrizione: {{articolo.descrizione}}</li>
+      <li>Prezzo: {{articolo.prezzo}} €</li>
+    </ul>
+  </section>
+  <div *ngIf="idCarrello && usernameLoggato">
+    <button class="btn btn-primary" href="#" (click)="aggiungiCarrello(
+      articolo.idArticolo, usernameLoggato, idCarrello)">Aggiungi al carrello</button>
+  </div>
+</article>

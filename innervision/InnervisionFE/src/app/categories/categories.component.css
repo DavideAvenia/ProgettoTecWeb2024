@@ -1,0 +1,29 @@
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 10px;
+  justify-content: space-around;
+}
+
+.articolo p {
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .articolo {
+    flex: 1 1 calc(50% - 14px);
+    max-width: calc(50% - 14px);
+  }
+}
+
+@media (max-width: 499px) {
+  .articolo {
+    flex: 1 1 calc(100% - 14px);
+    max-width: calc(100% - 14px);
+  }
+}

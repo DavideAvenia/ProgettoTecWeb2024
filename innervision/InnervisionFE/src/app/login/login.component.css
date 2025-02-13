@@ -1,0 +1,44 @@
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.form-login {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 15pt;
+  margin-bottom: 5%;
+}
+
+label, input {
+  display: block;
+}
+
+label {
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12pt;
+}
+
+input {
+  font-size: 16pt;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 400px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid .3px;
+}
+a {
+  text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}

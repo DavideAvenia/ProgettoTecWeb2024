@@ -1,0 +1,30 @@
+<div class="cart-container">
+  <h1>Il tuo Carrello</h1>
+  <div *ngIf="carrello && carrello.articoli && carrello.articoli.length > 0; else emptyCart">
+    <div class="cart-items">
+      <div class="cart-item" *ngFor= "let articolo of carrello.articoli">
+          <div class="item-details">
+              <h2>{{articolo.nome}}</h2>
+              <p>Categoria: {{articolo.categoria.descCategoria}}</p>
+              <p>Colore montatura: {{articolo.coloreMontatura.descColore}}</p>
+              <p>Colore lente: {{articolo.coloreLente.descColore}}</p>
+              <p>Prezzo: {{articolo.prezzo}} €</p>
+          </div>
+          <button class="remove-btn" (click)="rimuoviCarrello(
+            articolo.idArticolo)">Rimuovi</button>
+      </div>
+    </div>
+    <div class="cart-summary">
+        <button class="checkout-btn"(click)="acquistaArticoli()" >Acquista articoli</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #emptyCart>
+  <div *ngIf="usernameLoggato">
+    <p>Carrello vuoto, <a [routerLink]="['/']">torna nella home</a></p>
+  </div>
+  <div *ngIf="!usernameLoggato">
+    <p>Carrello vuoto oppure effettua il login, <a [routerLink]="['/']">torna nella home</a></p>
+  </div>
+</ng-template>

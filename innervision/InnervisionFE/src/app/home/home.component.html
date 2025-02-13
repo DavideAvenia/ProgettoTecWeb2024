@@ -1,0 +1,16 @@
+<section>
+  <form (ngSubmit)="ricercaPerNome()">
+    <input
+      type="text"
+      placeholder="Ricerca occhiali"
+      [(ngModel)]="ricercaNome"
+      name="nome">
+    <button class="primary" type="submit" href="#">Cerca</button>
+  </form>
+  <section class="results">
+    <a *ngFor= "let articolo of articoloList"
+        [routerLink]="['/details', articolo.idArticolo]">
+      <app-articolo [articolo] = "articolo"></app-articolo>
+    </a>
+  </section>
+</section>

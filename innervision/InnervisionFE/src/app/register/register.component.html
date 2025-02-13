@@ -1,0 +1,24 @@
+<section class="form-registrazione">
+  <form [formGroup]="applyForm" (submit)="submitRegistration()">
+    <h3 class="section-heading">Registrazione</h3>
+    <label for="first-name">Nome</label>
+    <input id="first-name" type="text" formControlName="nome" required>
+
+    <label for="last-name">Cognome</label>
+    <input id="last-name" type="text" formControlName="cognome" required>
+
+    <label for="last-name">Username</label>
+    <input id="username" type="text" formControlName="username" required>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" formControlName="email" required>
+
+    <label for="password">Password</label>
+    <input id="password" type="password" formControlName="password" required>
+
+    <label for="checkPassword">Ripeti la password</label>
+    <input id="checkPassword" type="password" formControlName="checkPassword" required>
+
+    <button type="submit" class="primary" href="#">Registrati!</button>
+  </form>
+</section>
